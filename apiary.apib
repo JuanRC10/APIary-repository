@@ -14,7 +14,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         [
             {
                 "question": "Favourite programming language?",
-                "published_at": "2016-03-07T10:40:51.620Z",
+                "published_at": "2015-08-05T08:40:51.620Z",
                 "choices": [
                     {
                         "choice": "Swift",
@@ -37,10 +37,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         ]
 
 ### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+You may create your own question using this action.
+This action takes a JSON payload as part of the request.
+Response then return specific header and body.
 
 + Request (application/json)
 
@@ -50,8 +49,7 @@ form of choices.
                 "Swift",
                 "Python",
                 "Objective-C",
-                "Ruby",
-                "Ensamblador"
+                "Ruby"
             ]
         }
 
@@ -59,28 +57,30 @@ form of choices.
 
     + Headers
 
-            Location: /questions/2
+            Location: /questions/1
 
     + Body
 
             {
                 "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
+                "published_at": "2014-11-11T08:40:51.620Z",
+                "url": "/questions/1",
                 "choices": [
                     {
                         "choice": "Swift",
+                        "url": "/questions/1/choices/1",
                         "votes": 0
                     }, {
                         "choice": "Python",
+                        "url": "/questions/1/choices/2",
                         "votes": 0
                     }, {
                         "choice": "Objective-C",
+                        "url": "/questions/1/choices/3",
                         "votes": 0
                     }, {
                         "choice": "Ruby",
-                        "votes": 0
-                    }, {
-                        "choice": "Ensamblador",
+                        "url": "/questions/1/choices/4",
                         "votes": 0
                     }
                 ]
