@@ -36,8 +36,53 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             }
         ]
 
-+Reponse 200 (application/vnd.siren+json)
-    body
+
++ Reponse 200 (application/vnd.siren+json)
+   
+    + Body
+        {
+            "links" : [
+                {
+                    "rel" : [
+                        "next"
+                        ],
+                    "href" : "\/polls?before=10"
+                },
+                {
+                    "rel" : [
+                        "self"
+                        ],
+                    "href" : "\/polls"
+                }
+            ],
+            "entities" : [
+                {
+                    "rel" : [
+                        "questions"
+                        ],
+                    "properties" : [
+                        "published at" :  "2016-08-05T08:40:51.620Z"
+                        "question" : -"Favourite programming language?"
+                        ],
+                    "links" : [
+                        {
+                            "rel" : [
+                                "self"
+                            ],
+                            "href" : "\/polls\/1"
+                        }
+                    ],
+                    "entities" : [
+                        {
+                            "rel" : [
+                                "choices"
+                            ]
+                        }
+                    ]
+                }
+            ]
+         }
+            
 
 ### Create a New Question [POST]
 You may create your own question using this action.
